@@ -1,50 +1,57 @@
-namespace Student_Project;
-
-public class Major
+namespace Student_Project
 {
-    // id private
-    private int dId;
-    
-    public int ID { get; set; }
-    
-    // major name
-    public String sMajorName { get;}
-
-    // dr name
-
-    public String sDrName;
-
-
-    // Method add
-
-    public void Add()
+    public class Major
     {
-        
+        // Private field for the Major ID
+        private int dId;
+
+        // Property for the Major ID with validation in the setter
+        public int ID
+        {
+            get
+            {
+                return dId;
+            }
+            set
+            {
+                if (value > 3) // Ensure the ID is greater than 3
+                {
+                    dId = value;
+                }
+            }
+        }
+
+        // Readonly property for the Major Name
+        public string sMajorName { get; }
+
+        // Property for the Doctor's Name
+        public string sDrName;
+
+        // Method to add a major (currently not implemented)
+        public void Add()
+        {
+            // Implementation for adding a major would go here
+        }
+
+        // Method to remove a major (currently not implemented)
+        public void Remove()
+        {
+            // Implementation for removing a major would go here
+        }
+
+        // Constructor to initialize the Major with a name and a doctor's name
+        public Major(string sMajorName, string sDrName)
+        {
+            this.sMajorName = sMajorName;
+            this.sDrName = sDrName;
+        }
+
+        // Copy constructor to create a new Major from an existing one
+        public Major(Major myMajor)
+        {
+            ID = myMajor.dId;
+            this.sMajorName = myMajor.sMajorName;
+            this.sDrName = myMajor.sDrName;
+        }
     }
-    // Method remove
-
-    public void Remove()
-    {
-        
-    }
-
-    // constructor to take 2 par name, major name
-    public Major(String sMajorName, String sDrName)
-    {
-        this.sDrName = sDrName;
-        this.sMajorName = sMajorName;
-    }
-    
-
-    
-    // copy constructor.
-    public Major(Major myMajor)
-    {
-        this.dId = myMajor.dId;
-        this.sMajorName = myMajor.sMajorName;
-        this.sDrName = myMajor.sDrName;
-    }
-
-
-
 }

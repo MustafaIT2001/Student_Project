@@ -12,3 +12,4 @@
 /home/musttafa_it/RiderProjects/Student Project/Student Project/obj/Debug/net8.0/Student Project.pdb
 /home/musttafa_it/RiderProjects/Student Project/Student Project/obj/Debug/net8.0/Student Project.genruntimeconfig.cache
 /home/musttafa_it/RiderProjects/Student Project/Student Project/obj/Debug/net8.0/ref/Student Project.dll
+/home/musttafa_it/RiderProjects/Student Project/Student Project/obj/Debug/net8.0/Student Project.sourcelink.json

@@ -1,9 +1,11 @@
 namespace Student_Project
 {
-    class Course
+    public class Course
     {
+        // Backing field for the Hours property
         private int dHours;
-
+        
+        // Property for Hours with validation in the setter
         public int Hours
         {
             get
@@ -12,29 +14,36 @@ namespace Student_Project
             }
             set
             {
-                if (value >= 3)
+                if (value >= 3) // Ensure the course hours are 3 or more
                 {
                     dHours = value;
                 }
             }
         }
 
-        public int dCourseId { get; set; }
+        // Readonly property for Course ID
+        public int dCourseId { get; }
 
-        public string CourseName { get; set; }
+        // Readonly property for Course Name
+        public string CourseName { get; }
 
-        public List<Course> MyStudentCoursesList { get; set; }
+        // List to hold student courses
+        public List<Course> MyStudentCoursesList;
 
+        // Parameterized constructor to initialize properties with given values
         public Course(string name, int dHours)
         {
             CourseName = name;
-            this.dHours = dHours;
+            Hours = dHours;
             MyStudentCoursesList = new List<Course>();
         }
 
-        public void AddCourse(string courseName, int hours)
+        // Copy constructor to create a new Course from an existing one
+        public Course(Course myCourse)
         {
-            MyStudentCoursesList.Add(new Course(courseName, hours));
+            CourseName = myCourse.CourseName;
+            dCourseId = myCourse.dCourseId;
+            Hours = myCourse.Hours;
         }
     }
 }
